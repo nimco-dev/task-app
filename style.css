@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background: #08080a;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Background Glow Effect */
+.bg-light {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(112, 0, 255, 0.2) 0%, transparent 70%);
+    z-index: -1;
+    filter: blur(80px);
+}
+
+.app-card {
+    width: 420px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 40px;
+    padding: 40px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 25px;
+    background: linear-gradient(to right, #fff, #7000ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    padding: 15px 20px;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #7000ff;
+    background: rgba(112, 0, 255, 0.1);
+}
+
+.add-btn {
+    background: #7000ff;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 18px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(112, 0, 255, 0.3);
+}
+
+.add-btn:hover {
+    transform: scale(1.1);
+    background: #8a2be2;
+}
+
+ul {
+    list-style: none;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+li {
+    background: rgba(255, 255, 255, 0.02);
+    margin-bottom: 12px;
+    padding: 18px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+li.completed span {
+    text-decoration: line-through;
+    color: #555;
+}
+
+.delete-btn {
+    color: #ff4b2b;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Custom Scrollbar */
+ul::-webkit-scrollbar { width: 4px; }
+ul::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
